@@ -54,3 +54,9 @@ class Player(CircleShape):
         rotated_vector = normal_vec.rotate(self.rotation)
         rotated_with_speed_vector = rotated_vector * PLAYER_SHOOT_SPEED
         shot.velocity = rotated_with_speed_vector
+
+    def collides_with(self, other):
+        for point in self.triangle():
+            if point.distance_to(other.position) < other.radius:
+                return True
+        return False
