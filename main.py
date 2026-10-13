@@ -37,15 +37,6 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    while True:
-                        draw_pause_menu(screen)
-                        for event in pygame:
-                            if event.type == pygame.QUIT
-                                return
-                            if event.type == pygame.KEYDOWN:
-                                break
 
         # Process Input
         updatable.update(dt)
@@ -77,12 +68,6 @@ def main():
         # Player and object drawing ends here
         pygame.display.flip()
         dt = clock.tick(60) / 1000
-
-def draw_pause_menu(screen):
-    screen.fill("black")
-    font = pygame.font.Font(size=40)
-    text = font.render("Game Paused. Press any key to resume", True, "white")
-    screen.blit(text, pygame.Rect(center=(text.get_rect().center))
 
 if __name__ == "__main__":
     main()
